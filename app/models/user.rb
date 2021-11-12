@@ -1,7 +1,7 @@
-# (c) goodprogrammer.ru
+class User < ApplicationRecord
+  has_many :questions
 
-# Модель пользователя.
-#
-# Каждый экземпляр этого класса — загруженная из БД инфа о конкретном юзере.
-class User < ActiveRecord::Base
+  validates :email, :username, presence: true
+  validates :email, :username, uniqueness: true
+
 end
