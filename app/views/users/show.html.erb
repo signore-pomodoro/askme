@@ -1,13 +1,14 @@
-<%# Тут мы можем писать просто html %>
-<h1>Я демо страничка!</h1>
+<h1><%= @user.name %></h1>
 
-<p>
-  Время сейчас:
-  <%# С помощью конструкций <%= ... => мы можем выводить строки из переменных %>
-  <%# экземпляра шаблона. %>
-  <%= @time %>
-</p>
+<div>
+  <%= image_tag user_avatar(@user), alt: '[Фото]' %>
+</div>
 
-<p>
-  <%= @hello %>
-</p>
+
+<h2>@<%= @user.username %></h2>
+
+<a href="#" class="button button-green">Задать вопрос</a>
+
+<% @questions.each do |question| %>
+  <%= render partial: 'questions/question', object: question %>
+<% end %>

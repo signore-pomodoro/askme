@@ -4,6 +4,7 @@ class Question < ApplicationRecord
 
   # валидируем сразу и связь, теперь нельзя создать вопрос, у которого нет юзера
   validates :user, :text, presence: true
+  validates :question, length: { maximum: 255 }
 
   # Ошибки валидаций можно посмотреть методом errors.
 
