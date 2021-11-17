@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :questions
   root 'users#index'
 
   # Ресурс пользователей (экшен destroy не поддерживается)
