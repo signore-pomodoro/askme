@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :questions
   root 'users#index'
+  
+  resources :questions
 
   # Ресурс пользователей (экшен destroy не поддерживается)
   resources :users, except: [:destroy]
